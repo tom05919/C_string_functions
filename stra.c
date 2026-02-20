@@ -41,8 +41,8 @@ int Str_compare(const char str1[], const char str2[]) {
     return 0;
 }
 
-char *Str_search(char str[], const char subStr[]) {
-    char *start;
+char *Str_search(const char str[], const char subStr[]) {
+    const char *start;
     int subStringCount = 0;
     int length = Str_getLength(str);
     int subLength = Str_getLength(subStr);
