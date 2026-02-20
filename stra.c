@@ -1,5 +1,6 @@
 #include "str.h"
 #include <stddef.h>
+#include <assert.h>
 
 size_t Str_getLength(const char pcSrc[]) {
     size_t strLength = 0;
@@ -30,6 +31,7 @@ char *Str_concat(char dest[], const char source[]) {
 }
 
 int Str_compare(const char str1[], const char str2[]) {
+    int i;
     int length = Str_getLength(str1);
     for (int i = 0; i < length; i++) {
         if (str1[i] != str2[i]) {
@@ -45,8 +47,9 @@ char *Str_search(const char str[], const char subStr[]) {
     int length = Str_getLength(str);
     int subLength = Str_getLength(subStr);
     assert(length >= subLength);
+    int i;
 
-    for (int i = 0; i < length; i++) {
+    for (i = 0; i < length; i++) {
         if (str[i] == subStr[subStringCount]) {
             start = &str[i];
             i++;
@@ -57,7 +60,7 @@ char *Str_search(const char str[], const char subStr[]) {
                 subStringCount++;
             }
             if (subStringCount == subLength && subStr[subStringCount] == '\0') {
-                return *start;
+                return start;
             } else {
                 subStringCount = 0;
             }
