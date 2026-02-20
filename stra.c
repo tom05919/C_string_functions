@@ -33,7 +33,7 @@ char *Str_concat(char dest[], const char source[]) {
 int Str_compare(const char str1[], const char str2[]) {
     int i;
     int length = Str_getLength(str1);
-    for (int i = 0; i < length; i++) {
+    for (i = 0; i < length; i++) {
         if (str1[i] != str2[i]) {
             return str1[i] - str2[i];
         }
@@ -41,13 +41,13 @@ int Str_compare(const char str1[], const char str2[]) {
     return 0;
 }
 
-char *Str_search(const char str[], const char subStr[]) {
+char *Str_search(char str[], const char subStr[]) {
     char *start;
     int subStringCount = 0;
     int length = Str_getLength(str);
     int subLength = Str_getLength(subStr);
-    assert(length >= subLength);
     int i;
+    assert(length >= subLength);
 
     for (i = 0; i < length; i++) {
         if (str[i] == subStr[subStringCount]) {
