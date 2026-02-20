@@ -12,7 +12,7 @@ size_t Str_getLength(const char pcSrc[]) {
 
 char *Str_copy(char dest[], const char source[]) {
     int strLength = 0;
-    while (source[strLength] != '/0') {
+    while (source[strLength] != '\0') {
         dest[strLength] = source[strLength];
         strLength++;
     }
@@ -22,7 +22,7 @@ char *Str_copy(char dest[], const char source[]) {
 char *Str_concat(char dest[], const char source[]) {
     int destLength = Str_getLength(dest);
     int length = 0;
-    while (source[length] != '/0') {
+    while (source[length] != '\0') {
         dest[(destLength - 1) + length] = source[length];
         length++;
     }
@@ -56,7 +56,7 @@ char *Str_search(const char str[], const char subStr[]) {
                 i++;
                 subStringCount++;
             }
-            if (subStringCount == subLength && subStr[subStringCount] == '/0') {
+            if (subStringCount == subLength && subStr[subStringCount] == '\0') {
                 return *start;
             } else {
                 subStringCount = 0;
