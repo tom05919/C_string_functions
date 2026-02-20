@@ -1,5 +1,5 @@
-#include <str.h>
-#include <stdio.h>
+#include "str.h"
+#include <stddef.h>
 
 size_t Str_getLength(const char pcSrc[]) {
     size_t strLength = 0;
