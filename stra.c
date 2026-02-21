@@ -25,7 +25,7 @@ char *Str_concat(char dest[], const char source[]) {
     int destLength = Str_getLength(dest);
     int length = 0;
     while (source[length] != '\0') {
-        dest[(destLength - 1) + length] = source[length];
+        dest[(destLength) + length] = source[length];
         length++;
     }
     dest[(destLength - 1) + length] = '\0';
