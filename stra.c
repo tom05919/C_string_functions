@@ -34,7 +34,7 @@ char *Str_concat(char dest[], const char source[]) {
 
 int Str_compare(const char str1[], const char str2[]) {
     int i;
-    int length = Str_getLength(str1);
+    int length = Str_getLength(str1) + 1;
     for (i = 0; i < length; i++) {
         if (str1[i] != str2[i]) {
             return str1[i] - str2[i];
