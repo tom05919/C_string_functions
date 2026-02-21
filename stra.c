@@ -49,7 +49,7 @@ char *Str_search(const char str[], const char subStr[]) {
     int length = Str_getLength(str);
     int subLength = Str_getLength(subStr);
     int i;
-    if (length >= subLength) return NULL;
+    if (length < subLength) return NULL;
 
     for (i = 0; i < length; i++) {
         if (str[i] == subStr[subStringCount]) {
