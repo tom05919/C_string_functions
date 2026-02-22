@@ -64,6 +64,7 @@ char *Str_search(const char str[], const char subStr[]) {
                 j = 0;
             }
         }
+        j = 0;
     }
     return NULL;
 }
