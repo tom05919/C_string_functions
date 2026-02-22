@@ -12,24 +12,28 @@ size_t Str_getLength(const char *pcSrc) {
 }
 
 char *Str_copy(char *dest, const char *source) {
+    int i = 0;
     while(*source != '\0') {
         *dest = *source;
         dest++;
         source++;
+        i++;
     }
     *dest = '\0';
-    return dest;
+    return dest - i;
 }
 
 char *Str_concat(char *dest, const char *source) {
+    int i = 0;
     int length = Str_getLength(dest);
     dest += length;
     while (*source != '\0') {
         *dest = *source;
         dest++;
+        i++;
     }
     *dest = '\0';
-    return dest;
+    return dest - i;
 }
 
 int Str_compare(const char *str1, const char *str2) {
