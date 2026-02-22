@@ -20,7 +20,21 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   /* Insert your code here. */
+   int num = 0;
+   if (Str_getLength(pcFrom) == 0) {
+      printf(pcLine);
+      return 0;
+   }
+
+   char *occurance = Str_search(pcFrom, pcTo);
+   while (occurance != NULL) {
+      printf(pcLine);
+      num++;
+      pcFrom = occurance + Str_getLength(pcTo);
+      occurance = Str_search(pcFrom, pcTo);
+   }
+
+   return num;
 }
 
 /*--------------------------------------------------------------------*/
