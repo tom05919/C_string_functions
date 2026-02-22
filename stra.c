@@ -45,26 +45,23 @@ int Str_compare(const char str1[], const char str2[]) {
 
 char *Str_search(const char str[], const char subStr[]) {
     const char *start;
-    int subStringCount = 0;
     int length = Str_getLength(str);
     int subLength = Str_getLength(subStr);
     int i;
+    int j = 0;
     if (length < subLength) return NULL;
 
     for (i = 0; i < length; i++) {
         start = &str[i];
-        int j = 0;
-        if (str[i + j] == subStr[subStringCount]) {
+        if (str[i + j] == subStr[j]) {
             j++;
-            subStringCount++;
-        while (i < length && subStringCount < subLength && (str[i] == subStr[subStringCount])) {
-                i++;
-                subStringCount++;
+        while ((i +j) < length && j < subLength && (str[i + j] == subStr[j])) {
+                j++;
             }
-            if (subStringCount == subLength) {
+            if (j == subLength) {
                 return start;
             } else {
-                subStringCount = 0;
+                j = 0;
             }
         }
     }
