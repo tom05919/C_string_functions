@@ -79,6 +79,7 @@ char *Str_search(const char *str, const char *subStr) {
                 j = 0;
             }
         }
+        str++;
     }
     return NULL;
 }
