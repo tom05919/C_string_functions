@@ -26,6 +26,8 @@ static size_t replaceAndWrite(const char *pcLine,
    if (Str_getLength(pcFrom) == 0) {
       printf(pcLine);
       return 0;
+   } else if (occurance == NULL) {
+      printf(pcLine);
    }
 
    while (occurance != NULL) {
