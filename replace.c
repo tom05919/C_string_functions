@@ -40,7 +40,7 @@ static size_t replaceAndWrite(const char *pcLine,
       pcLine += Str_getLength(pcFrom);
       occurance = Str_search(pcLine, pcTo);
    }
-   printf("\n");
+   printf(pcLine);
    return num;
 }
 
