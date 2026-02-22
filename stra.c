@@ -53,11 +53,11 @@ char *Str_search(const char str[], const char subStr[]) {
 
     for (i = 0; i < length; i++) {
         start = &str[i];
-        if (str[i] == subStr[subStringCount]) {
-            i++;
+        int j = 0;
+        if (str[i + j] == subStr[subStringCount]) {
+            j++;
             subStringCount++;
-            while ((str[i] == subStr[subStringCount]) &&
-            i < length && subStringCount < subLength) {
+        while (i < length && subStringCount < subLength && (str[i] == subStr[subStringCount])) {
                 i++;
                 subStringCount++;
             }
