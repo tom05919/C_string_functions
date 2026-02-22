@@ -38,7 +38,7 @@ static size_t replaceAndWrite(const char *pcLine,
       pcLine += Str_getLength(pcTo);
       occurance = Str_search(pcLine, pcTo);
    }
-   printf('\n');
+   printf("%s", '\n');
    return num;
 }
 
