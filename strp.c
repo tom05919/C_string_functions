@@ -34,7 +34,7 @@ char *Str_concat(char *dest, const char *source) {
         i++;
     }
     *dest = '\0';
-    return dest - i;
+    return dest - i - length;
 }
 
 int Str_compare(const char *str1, const char *str2) {
