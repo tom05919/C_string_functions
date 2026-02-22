@@ -54,8 +54,8 @@ char *Str_search(const char str[], const char subStr[]) {
     for (i = 0; i < length; i++) {
         start = &str[i];
         if (str[i + j] == subStr[j]) {
-            j++;
-        while ((i +j) < length && j < subLength && (str[i + j] == subStr[j])) {
+            while ((i + j) < length && j < subLength && 
+            (str[i + j] == subStr[j])) {
                 j++;
             }
             if (j == subLength) {
