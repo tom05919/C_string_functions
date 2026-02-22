@@ -29,11 +29,11 @@ static size_t replaceAndWrite(const char *pcLine,
    }
 
    while (occurance != NULL) {
-      while (*pcLine != occurance) {
-         printf(*pcLine);
+      while (*pcLine != *occurance) {
+         printf("%c", *pcLine);
          pcLine++;
       }
-      printf(pcTo);
+      printf("%s", pcTo);
       num++;
       pcLine += Str_getLength(pcTo);
       occurance = Str_search(pcLine, pcTo);
