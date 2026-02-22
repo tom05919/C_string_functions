@@ -60,7 +60,7 @@ char *Str_search(const char *str, const char *subStr) {
     }
 
     for (i = 0; i < length; i++) {
-        start = *str;
+        start = str;
         if (*str == *subStr) {
             while(*str != '\0' && *subStr != '\0' && *str == *subStr) {
                 j++;
