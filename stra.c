@@ -52,8 +52,8 @@ char *Str_search(const char str[], const char subStr[]) {
     if (length < subLength) return NULL;
 
     for (i = 0; i < length; i++) {
+        start = &str[i];
         if (str[i] == subStr[subStringCount]) {
-            start = &str[i];
             i++;
             subStringCount++;
             while ((str[i] == subStr[subStringCount]) &&
@@ -61,7 +61,7 @@ char *Str_search(const char str[], const char subStr[]) {
                 i++;
                 subStringCount++;
             }
-            if (subStringCount == subLength && subStr[subStringCount] == '\0') {
+            if (subStringCount == subLength) {
                 return start;
             } else {
                 subStringCount = 0;
