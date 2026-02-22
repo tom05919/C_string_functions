@@ -30,6 +30,7 @@ char *Str_concat(char *dest, const char *source) {
     while (*source != '\0') {
         *dest = *source;
         dest++;
+        source++;
         i++;
     }
     *dest = '\0';
