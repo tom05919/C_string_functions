@@ -37,7 +37,8 @@ static size_t replaceAndWrite(const char *pcLine,
       }
       printf("%s", pcTo);
       num++;
-      occurance = Str_search(pcLine, pcTo);
+      pcLine += Str_getLength(pcFrom);
+      occurance = Str_search(pcLine, pcFrom);
    }
    printf(pcLine);
    return num;
@@ -76,7 +77,7 @@ int main(int argc, char *argv[])
    pcTo = argv[2];
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
-      uReplaceCount = replaceAndWrite(acLine, pcFrom, pcTo);
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
    }
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
