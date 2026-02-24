@@ -30,7 +30,7 @@ file=01empty.txt
 ./testreplacediff $file 123 xyz
 ./testreplacediff $file "" xyz
 ./testreplacediff $file 123 ""
-./testreplacediff $file "" ""
+./testreplacediff $file "" "" 
 
 # Execute testreplacediff using file 02data.txt and a variety of
 # "from" and "to" strings.

@@ -16,7 +16,7 @@
 # exit status and write the same characters to stdout and stderr.
 #---------------------------------------------------------------------
 
-# Validate the arguments.
+# Validate the arguments. 
 if [ "$#" != "3" ]; then
    echo "Usage: testreplacediff file fromStr toStr"
    exit 1
